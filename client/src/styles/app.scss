@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
 * {
     border: 0px;
     padding: 0px;
@@ -15,7 +17,45 @@
         // border: 0.4px solid black;
         width: 75%;
         height: 75%;
-        box-shadow: 10px 10px 5px #aaaaaa;
+        box-shadow:  0 0 10px 10px #aaaaaa;
         background-color: white;
+    }
+}
+
+.auth-page {
+    text-align: center;
+    color: rgb(20, 141, 172);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.auth-container {
+    // border: 1px solid black;
+
+    .quotes {
+        color: grey;
+    }
+
+    .auth-btn {
+        // border: 1px solid black;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .btn1 {
+            background-color: green;
+            color: white;
+            margin: 10px;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .btn2 {
+            background-color: rgb(211, 77, 29);
+            color: white;
+            margin: 10px;
+            width: 100%;
+            font-weight: bold;
+        }
     }
 }
