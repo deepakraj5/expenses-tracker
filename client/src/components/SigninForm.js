@@ -3,25 +3,18 @@ import { useHistory } from 'react-router-dom'
 import { Button, TextField } from "@material-ui/core";
 import AppService from '../services/AppService'
 
-const SignupForm = () => {
+const SigninForm = () => {
 
     const history = useHistory()
 
-    const [name, setName] = useState('')
     const [email, setEmail] = useState('')
-    const [phone, setPhone] = useState('')
     const [password, setPassword] = useState('')
 
     const handleSubmit = async () => {
-      const data = {
-        name, email, phone, password
-      }
       
-      const response = await AppService.signup(data)
+      const response = await AppService.signin(email, password)
 
-      if (response.status === 200) {
-        history.push('/')
-      }
+      console.log(response)
 
     }
 
@@ -35,14 +28,6 @@ const SignupForm = () => {
                 <form>
                   <table cellSpacing="25">
                     <thead>
-                      <tr>
-                        <td>
-                          <label>Name</label>
-                        </td>
-                        <td>
-                          <TextField placeholder="Name" size="small" value={name} onChange={e => setName(e.target.value)} />
-                        </td>
-                      </tr>
 
                       <tr>
                         <td>
@@ -54,20 +39,6 @@ const SignupForm = () => {
                             type="email"
                             size="small"
                             value={email} onChange={e => setEmail(e.target.value)}
-                          />
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td>
-                          <label>Phone</label>
-                        </td>
-                        <td>
-                          <TextField
-                            placeholder="Phone"
-                            type="number"
-                            size="small"
-                            value={phone} onChange={e => setPhone(e.target.value)}
                           />
                         </td>
                       </tr>
@@ -91,7 +62,7 @@ const SignupForm = () => {
                           <Button variant="contained" color="secondary" onClick={handleCancel}>Cancel</Button>
                         </td>
                         <td>
-                          <Button variant="contained" color="primary" onClick={handleSubmit}>Submit</Button>
+                          <Button variant="contained" color="primary" onClick={handleSubmit}>Login</Button>
                         </td>
                       </tr>
                     </thead>
@@ -102,4 +73,4 @@ const SignupForm = () => {
     );
 }
 
-export default SignupForm
+export default SigninForm

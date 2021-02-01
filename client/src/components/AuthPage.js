@@ -11,6 +11,10 @@ const AuthPage = () => {
         history.push('/signup')
     }
 
+    const handleSignin = () => {
+      history.push('/signin')
+    }
+
   return (
     <div className="auth-page">
       <h1>Expense Tracker</h1>
@@ -33,7 +37,11 @@ const AuthPage = () => {
                 Signup
             </Button>
 
-            <Button className="btn2" variant="contained">
+            <Button 
+              className="btn2" 
+              variant="contained"
+              onClick={handleSignin}
+            >
                 Login
             </Button>
           </div>
